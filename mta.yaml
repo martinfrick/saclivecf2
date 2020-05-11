@@ -1,0 +1,19 @@
+ID: saclivecf
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: saclivecf-db-database
+   type: hdb
+   path: db
+   requires:
+    - name: saclivecf-hdi-container
+
+resources:
+ - name: saclivecf-hdi-container
+   parameters:
+      config:
+         schema: SACLIVECF
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
